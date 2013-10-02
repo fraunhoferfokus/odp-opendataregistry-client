@@ -187,7 +187,7 @@ public class MetadataBean implements Serializable {
      * @return the metadata_created
      */
     public Date getMetadata_created() {
-        return (Date) metadata_created.clone();
+        return metadata_created == null ? null : (Date) metadata_created.clone();
     }
 
     /**
@@ -195,14 +195,14 @@ public class MetadataBean implements Serializable {
      *            the metadata_created to set
      */
     public void setMetadata_created(Date metadata_created) {
-        this.metadata_created = (Date) metadata_created.clone();
+        this.metadata_created = metadata_created == null ? null : (Date) metadata_created.clone();
     }
 
     /**
      * @return the metadata_modified
      */
     public Date getMetadata_modified() {
-        return (Date) metadata_modified.clone();
+        return metadata_modified == null ? null : (Date) metadata_modified.clone();
     }
 
     /**
@@ -210,7 +210,7 @@ public class MetadataBean implements Serializable {
      *            the metadata_modified to set
      */
     public void setMetadata_modified(Date metadata_modified) {
-        this.metadata_modified = (Date) metadata_modified.clone();
+        this.metadata_modified = metadata_modified == null ? null : (Date) metadata_modified.clone();
     }
 
     /**

@@ -157,7 +157,7 @@ public class ResourceBean implements Serializable {
      * @return the created
      */
     public Date getCreated() {
-        return (Date) created.clone();
+        return created == null ? null : (Date) created.clone();
     }
 
     /**
@@ -165,14 +165,14 @@ public class ResourceBean implements Serializable {
      *            the created to set
      */
     public void setCreated(Date created) {
-        this.created = (Date) created.clone();
+        this.created = created == null ? null : (Date) created.clone();
     }
 
     /**
      * @return the last_modified
      */
     public Date getLast_modified() {
-        return (Date) last_modified.clone();
+        return last_modified == null ? null : (Date) last_modified.clone();
     }
 
     /**
@@ -180,7 +180,7 @@ public class ResourceBean implements Serializable {
      *            the last_modified to set
      */
     public void setLast_modified(Date last_modified) {
-        this.last_modified = (Date) last_modified.clone();
+        this.last_modified = last_modified == null ? null : (Date) last_modified.clone();
     }
 
     /**

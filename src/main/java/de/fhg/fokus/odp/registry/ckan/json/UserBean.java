@@ -181,7 +181,7 @@ public class UserBean implements Serializable {
      * @return the created
      */
     public Date getCreated() {
-        return (Date) created.clone();
+        return created == null ? null : (Date) created.clone();
     }
 
     /**
@@ -189,7 +189,7 @@ public class UserBean implements Serializable {
      *            the created to set
      */
     public void setCreated(Date created) {
-        this.created = (Date) created.clone();
+        this.created = created == null ? null : (Date) created.clone();
     }
 
     /**

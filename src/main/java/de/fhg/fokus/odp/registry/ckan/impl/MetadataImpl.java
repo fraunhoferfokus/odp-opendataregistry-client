@@ -423,7 +423,7 @@ public class MetadataImpl implements Metadata, Serializable {
 
     @Override
     public void setModified(Date modified) {
-        this.modified = (Date) modified.clone();
+        this.modified = modified == null ? null : (Date) modified.clone();
     }
 
     @Override
@@ -432,7 +432,7 @@ public class MetadataImpl implements Metadata, Serializable {
     }
 
     public void setCreated(Date created) {
-        this.created = (Date) created.clone();
+        this.created = created == null ? null : (Date) created.clone();
     }
 
     @Override
@@ -442,7 +442,7 @@ public class MetadataImpl implements Metadata, Serializable {
 
     @Override
     public void setPublished(Date published) {
-        this.published = (Date) published.clone();
+        this.published = published == null ? null : (Date) published.clone();
     }
 
     @Override
@@ -575,7 +575,7 @@ public class MetadataImpl implements Metadata, Serializable {
 
     @Override
     public void setTemporalCoverageFrom(Date temporalCoverageFrom) {
-        this.temporalCoverageFrom = (Date) temporalCoverageFrom.clone();
+        this.temporalCoverageFrom = temporalCoverageFrom == null ? null : (Date) temporalCoverageFrom.clone();
     }
 
     @Override
@@ -585,7 +585,7 @@ public class MetadataImpl implements Metadata, Serializable {
 
     @Override
     public void setTemporalCoverageTo(Date temporalCoverageTo) {
-        this.temporalCoverageTo = (Date) temporalCoverageTo.clone();
+        this.temporalCoverageTo = temporalCoverageTo == null ? null : (Date) temporalCoverageTo.clone();
     }
 
     @Override
