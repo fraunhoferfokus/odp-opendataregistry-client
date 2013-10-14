@@ -59,7 +59,7 @@
 
 	</dependencies>
 	<scm>
-		<developerConnection>scm:git:git://gitlab.fokus.fraunhofer.de:odp-opendataregistry-client</developerConnection>
+		<developerConnection>scm:git:git://github.com:fraunhoferfokus/odp-opendataregistry-client.git</developerConnection>
 	</scm>
 	<build>
 		<finalName>${project.artifactId}-${project.version}-${buildNumber}</finalName>
