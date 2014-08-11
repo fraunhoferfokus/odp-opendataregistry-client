@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012, 2013 Fraunhofer Institute FOKUS
+ * Copyright (c) 2012, 2014 Fraunhofer Institute FOKUS
  *
  * This file is part of Open Data Platform.
  *
@@ -24,36 +24,41 @@ package de.fhg.fokus.odp.registry.model;
 
 import java.util.List;
 
+import de.fhg.fokus.odp.registry.ckan.json.PolygonBean;
+
 /**
  * The Interface SpatialData.
  * 
  * @author sim
+ * @author msg
  */
 public interface SpatialData {
 
-    /**
-     * Gets the type.
-     * 
-     * @return the type
-     */
-    SpatialEnumType getType();
+	/**
+	 * Gets the type.
+	 * 
+	 * @return the type
+	 */
+	SpatialEnumType getType();
 
-    /**
-     * Gets the coordinates.
-     * 
-     * @return the coordinates
-     */
-    List<Coordinate> getCoordinates();
+	void setType(SpatialEnumType type);
 
-    /**
-     * Adds the coordinate.
-     * 
-     * @param x
-     *            the x
-     * @param y
-     *            the y
-     * @return the coordinate
-     */
-    Coordinate addCoordinate(double x, double y);
+	/**
+	 * Gets the coordinates.
+	 * 
+	 * @return the coordinates
+	 */
+	List<PolygonBean> getPolygons();
 
+	/**
+	 * Adds the coordinate.
+	 * 
+	 * @param x
+	 *            the x
+	 * @param y
+	 *            the y
+	 * @return the coordinate
+	 */
+	Coordinate addCoordinate(int index, double x, double y);
+	 PolygonBean addPolygon();
 }

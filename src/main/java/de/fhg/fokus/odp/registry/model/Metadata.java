@@ -33,417 +33,479 @@ import de.fhg.fokus.odp.registry.model.exception.OpenDataRegistryException;
  */
 public interface Metadata extends Serializable {
 
-    /**
-     * Gets the author.
-     * 
-     * @return the author
-     */
-    String getAuthor();
+	/**
+	 * Gets the author.
+	 * 
+	 * @return the author
+	 */
+	String getAuthor();
 
-    /**
-     * Gets the name.
-     * 
-     * @return the name
-     */
-    String getName();
+	/**
+	 * Gets the name.
+	 * 
+	 * @return the name
+	 */
+	String getName();
 
-    /**
-     * Sets the name.
-     * 
-     * @param name
-     *            the new name
-     */
-    void setName(String name);
+	/**
+	 * Sets the name.
+	 * 
+	 * @param name
+	 *            the new name
+	 */
+	void setName(String name);
 
-    /**
-     * Gets the title.
-     * 
-     * @return the title
-     */
-    String getTitle();
+	/**
+	 * Gets the title.
+	 * 
+	 * @return the title
+	 */
+	String getTitle();
 
-    /**
-     * Sets the title.
-     * 
-     * @param title
-     *            the new title
-     */
-    void setTitle(String title);
+	/**
+	 * Sets the title.
+	 * 
+	 * @param title
+	 *            the new title
+	 */
+	void setTitle(String title);
 
-    /**
-     * Gets the url.
-     * 
-     * @return the url
-     */
-    String getUrl();
+	/**
+	 * Gets the url.
+	 * 
+	 * @return the url
+	 */
+	String getUrl();
 
-    /**
-     * Sets the url.
-     * 
-     * @param url
-     *            the new url
-     */
-    void setUrl(String url);
+	/**
+	 * Sets the url.
+	 * 
+	 * @param url
+	 *            the new url
+	 */
+	void setUrl(String url);
 
-    /**
-     * Gets the created.
-     * 
-     * @return the created
-     */
-    Date getCreated();
+	/**
+	 * Gets the created.
+	 * 
+	 * @return the created
+	 */
+	Date getCreated();
 
-    /**
-     * Gets the created as string.
-     * 
-     * @param pattern
-     *            the pattern
-     * @return the created as string
-     */
-    String getCreatedAsString(String pattern);
+	/**
+	 * Gets the created as string.
+	 * 
+	 * @param pattern
+	 *            the pattern
+	 * @return the created as string
+	 */
+	String getCreatedAsString(String pattern);
 
-    /**
-     * Gets the modified.
-     * 
-     * @return the modified
-     */
-    Date getModified();
+	/**
+	 * Gets the modified.
+	 * 
+	 * @return the modified
+	 */
+	Date getModified();
 
-    /**
-     * Gets the modified as string.
-     * 
-     * @param pattern
-     *            the pattern
-     * @return the modified as string
-     */
-    String getModifiedAsString(String pattern);
+	/**
+	 * Gets the modified as string.
+	 * 
+	 * @param pattern
+	 *            the pattern
+	 * @return the modified as string
+	 */
+	String getModifiedAsString(String pattern);
 
-    /**
-     * Sets the modified.
-     * 
-     * @param modified
-     *            the new modified
-     */
-    void setModified(Date modified);
+	/**
+	 * Sets the modified.
+	 * 
+	 * @param modified
+	 *            the new modified
+	 */
+	void setModified(Date modified);
 
-    /**
-     * Gets the published.
-     * 
-     * @return the published
-     */
-    Date getPublished();
+	/**
+	 * Gets the published.
+	 * 
+	 * @return the published
+	 */
+	Date getPublished();
 
-    /**
-     * Gets the published as string.
-     * 
-     * @param pattern
-     *            the pattern
-     * @return the published as string
-     */
-    String getPublishedAsString(String pattern);
+	/**
+	 * Gets the published as string.
+	 * 
+	 * @param pattern
+	 *            the pattern
+	 * @return the published as string
+	 */
+	String getPublishedAsString(String pattern);
 
-    /**
-     * Sets the published.
-     * 
-     * @param published
-     *            the new published
-     */
-    void setPublished(Date published);
+	/**
+	 * Sets the published.
+	 * 
+	 * @param published
+	 *            the new published
+	 */
+	void setPublished(Date published);
 
-    /**
-     * Checks if is open.
-     * 
-     * @return true, if is open
-     */
-    boolean isOpen();
+	/**
+	 * Checks if is open.
+	 * 
+	 * @return true, if is open
+	 */
+	boolean isOpen();
 
-    /**
-     * Gets the contacts.
-     * 
-     * @return the contacts
-     */
-    List<Contact> getContacts();
+	/**
+	 * Gets the contacts.
+	 * 
+	 * @return the contacts
+	 */
+	List<Contact> getContacts();
 
-    /**
-     * Gets the contact.
-     * 
-     * @param role
-     *            the role
-     * @return the contact
-     * @throws OpenDataRegistryException
-     *             the open data registry exception
-     */
-    Contact getContact(RoleEnumType role) throws OpenDataRegistryException;
+	/**
+	 * Gets the contact.
+	 * 
+	 * @param role
+	 *            the role
+	 * @return the contact
+	 * @throws OpenDataRegistryException
+	 *             the open data registry exception
+	 */
+	Contact getContact(RoleEnumType role) throws OpenDataRegistryException;
 
-    /**
-     * New contact.
-     * 
-     * @param role
-     *            the role
-     * @return the contact
-     */
-    Contact newContact(RoleEnumType role);
+	/**
+	 * New contact.
+	 * 
+	 * @param role
+	 *            the role
+	 * @return the contact
+	 */
+	Contact newContact(RoleEnumType role);
 
-    /**
-     * Gets the temporal coverage from.
-     * 
-     * @return the temporal coverage from
-     */
-    Date getTemporalCoverageFrom();
+	/**
+	 * Gets the temporal coverage from.
+	 * 
+	 * @return the temporal coverage from
+	 */
+	Date getTemporalCoverageFrom();
 
-    /**
-     * Sets the temporal coverage from.
-     * 
-     * @param from
-     *            the new temporal coverage from
-     */
-    void setTemporalCoverageFrom(Date from);
+	/**
+	 * Sets the temporal coverage from.
+	 * 
+	 * @param from
+	 *            the new temporal coverage from
+	 */
+	void setTemporalCoverageFrom(Date from);
 
-    /**
-     * Gets the temporal coverage to.
-     * 
-     * @return the temporal coverage to
-     */
-    Date getTemporalCoverageTo();
+	/**
+	 * Gets the temporal coverage to.
+	 * 
+	 * @return the temporal coverage to
+	 */
+	Date getTemporalCoverageTo();
 
-    /**
-     * Sets the temporal coverage to.
-     * 
-     * @param to
-     *            the new temporal coverage to
-     */
-    void setTemporalCoverageTo(Date to);
+	/**
+	 * Sets the temporal coverage to.
+	 * 
+	 * @param to
+	 *            the new temporal coverage to
+	 */
+	void setTemporalCoverageTo(Date to);
 
-    /**
-     * Gets the licence.
-     * 
-     * @return the licence
-     */
-    Licence getLicence();
+	/**
+	 * Gets the licence.
+	 * 
+	 * @return the licence
+	 */
+	Licence getLicence();
 
-    /**
-     * Gets the metadata_modified.
-     * 
-     * @return the metadata_modified
-     */
-    Date getMetadataModified();
+	/**
+	 * Gets the metadata_modified.
+	 * 
+	 * @return the metadata_modified
+	 */
+	Date getMetadataModified();
 
-    /**
-     * Sets the licence.
-     * 
-     * @param licence
-     *            the new licence
-     */
-    void setLicence(Licence licence);
+	/**
+	 * Sets the licence.
+	 * 
+	 * @param licence
+	 *            the new licence
+	 */
+	void setLicence(Licence licence);
 
-    /**
-     * Gets the notes.
-     * 
-     * @return the notes
-     */
-    String getNotes();
+	/**
+	 * Gets the notes.
+	 * 
+	 * @return the notes
+	 */
+	String getNotes();
 
-    /**
-     * Sets the notes.
-     * 
-     * @param notes
-     *            the new notes
-     */
-    void setNotes(String notes);
+	/**
+	 * Sets the notes.
+	 * 
+	 * @param notes
+	 *            the new notes
+	 */
+	void setNotes(String notes);
 
-    /**
-     * Gets the tags.
-     * 
-     * @return the tags
-     */
-    List<Tag> getTags();
+	/**
+	 * Gets the tags.
+	 * 
+	 * @return the tags
+	 */
+	List<Tag> getTags();
 
-    /**
-     * New tag.
-     * 
-     * @param name
-     *            the name
-     * @return the tag
-     */
-    Tag newTag(String name);
+	/**
+	 * New tag.
+	 * 
+	 * @param name
+	 *            the name
+	 * @return the tag
+	 */
+	Tag newTag(String name);
 
-    /**
-     * Gets the resources.
-     * 
-     * @return the resources
-     */
-    List<Resource> getResources();
+	/**
+	 * Gets the resources.
+	 * 
+	 * @return the resources
+	 */
+	List<Resource> getResources();
 
-    /**
-     * New resource.
-     * 
-     * @return the resource
-     */
-    Resource newResource();
+	/**
+	 * clean resources.
+	 * 
+	 */
+	void cleanResources();
 
-    /**
-     * Gets the categories.
-     * 
-     * @return the categories
-     */
-    List<Category> getCategories();
+	/**
+	 * New resource.
+	 * 
+	 * @return the resource
+	 */
+	Resource newResource();
 
-    /**
-     * New category.
-     * 
-     * @return the category
-     */
-    Category newCategory();
+	/**
+	 * Gets the categories.
+	 * 
+	 * @return the categories
+	 */
+	List<Category> getCategories();
 
-    // extras
+	/**
+	 * New category.
+	 * 
+	 * @return the category
+	 */
+	Category newCategory();
 
-    /**
-     * Gets the sub categories.
-     * 
-     * @return the sub categories
-     */
-    List<Category> getSubCategories();
+	// extras
 
-    /**
-     * Gets the sector.
-     * 
-     * @return the sector
-     */
-    SectorEnumType getSector();
+	/**
+	 * Gets the sub categories.
+	 * 
+	 * @return the sub categories
+	 */
+	List<Category> getSubCategories();
 
-    /**
-     * Sets the sector.
-     * 
-     * @param sector
-     *            the new sector
-     */
-    void setSector(SectorEnumType sector);
+	/**
+	 * Gets the sector.
+	 * 
+	 * @return the sector
+	 */
+	SectorEnumType getSector();
 
-    /**
-     * Gets the geo granularity.
-     * 
-     * @return the geo granularity
-     */
-    String getGeoGranularity();
+	/**
+	 * Sets the sector.
+	 * 
+	 * @param sector
+	 *            the new sector
+	 */
+	void setSector(SectorEnumType sector);
 
-    /**
-     * Sets the geo granularity.
-     * 
-     * @param geoGranularity
-     *            the new geo granularity
-     */
-    void setGeoGranularity(String geoGranularity);
+	/**
+	 * Gets the geo granularity.
+	 * 
+	 * @return the geo granularity
+	 */
+	String getGeoGranularity();
 
-    /**
-     * Gets the temporal granularity.
-     * 
-     * @return the temporal granularity
-     */
-    TemporalGranularityEnumType getTemporalGranularity();
+	/**
+	 * Sets the geo granularity.
+	 * 
+	 * @param geoGranularity
+	 *            the new geo granularity
+	 */
+	void setGeoGranularity(String geoGranularity);
 
-    /**
-     * Sets the temporal granularity.
-     * 
-     * @param temporalGranularity
-     *            the new temporal granularity
-     */
-    void setTemporalGranularity(TemporalGranularityEnumType temporalGranularity);
+	/**
+	 * Gets the temporal granularity.
+	 * 
+	 * @return the temporal granularity
+	 */
+	TemporalGranularityEnumType getTemporalGranularity();
 
-    /**
-     * Gets the temporal granularity factor.
-     * 
-     * @return the temporal granularity factor
-     */
-    int getTemporalGranularityFactor();
+	/**
+	 * Sets the temporal granularity.
+	 * 
+	 * @param temporalGranularity
+	 *            the new temporal granularity
+	 */
+	void setTemporalGranularity(TemporalGranularityEnumType temporalGranularity);
 
-    /**
-     * Sets the temporal granularity factor.
-     * 
-     * @param factor
-     *            the new temporal granularity factor
-     */
-    void setTemporalGranularityFactor(int factor);
+	/**
+	 * Gets the temporal granularity factor.
+	 * 
+	 * @return the temporal granularity factor
+	 */
+	int getTemporalGranularityFactor();
 
-    /**
-     * Gets the state.
-     * 
-     * @return the state
-     */
-    String getState();
+	/**
+	 * Sets the temporal granularity factor.
+	 * 
+	 * @param factor
+	 *            the new temporal granularity factor
+	 */
+	void setTemporalGranularityFactor(int factor);
 
-    /**
-     * Sets the state.
-     * 
-     * @param state
-     *            the new state
-     */
-    void setState(String state);
+	/**
+	 * Gets the state.
+	 * 
+	 * @return the state
+	 */
+	String getState();
 
-    /**
-     * Gets the geo coverage.
-     * 
-     * @return the geo coverage
-     */
-    String getGeoCoverage();
+	/**
+	 * Sets the state.
+	 * 
+	 * @param state
+	 *            the new state
+	 */
+	void setState(String state);
 
-    /**
-     * Sets the geo coverage.
-     * 
-     * @param geoCoverage
-     *            the new geo coverage
-     */
-    void setGeoCoverage(String geoCoverage);
+	/**
+	 * Gets the geo coverage.
+	 * 
+	 * @return the geo coverage
+	 */
+	String getGeoCoverage();
 
-    /**
-     * Gets the images.
-     * 
-     * @return the images
-     */
-    List<String> getImages();
+	/**
+	 * Sets the geo coverage.
+	 * 
+	 * @param geoCoverage
+	 *            the new geo coverage
+	 */
+	void setGeoCoverage(String geoCoverage);
 
-    /**
-     * Gets the spatial data.
-     * 
-     * @return the spatial data
-     */
-    SpatialData getSpatialData();
+	/**
+	 * Gets the images.
+	 * 
+	 * @return the images
+	 */
+	List<String> getImages();
 
-    /**
-     * Gets the extra.
-     * 
-     * @param name
-     *            the name
-     * @return the extra
-     */
-    String getExtra(String name);
+	/**
+	 * Gets the spatial data.
+	 * 
+	 * @return the spatial data
+	 */
+	SpatialData getSpatialData();
+	
+	/**
+	 * Gets the spatial data value.
+	 * 
+	 * @return the spatial data value
+	 */
+	String getSpatialDataValue();
 
-    /**
-     * Sets the extra.
-     * 
-     * @param name
-     *            the name
-     * @param value
-     *            the value
-     */
-    void setExtra(String name, String value);
+	/**
+	 * Gets the extra.
+	 * 
+	 * @param name
+	 *            the name
+	 * @return the extra
+	 */
+	String getExtra(String name);
 
-    /**
-     * Gets the type.
-     * 
-     * @return the type
-     */
-    MetadataEnumType getType();
+	/**
+	 * Sets the extra.
+	 * 
+	 * @param name
+	 *            the name
+	 * @param value
+	 *            the value
+	 */
+	void setExtra(String name, String value);
 
-    /**
-     * Gets the average rating.
-     * 
-     * @return the average rating
-     */
-    double getAverageRating();
+	/**
+	 * Gets the type.
+	 * 
+	 * @return the type
+	 */
+	MetadataEnumType getType();
 
-    /**
-     * Gets the rating count.
-     * 
-     * @return the rating count
-     */
-    int getRatingCount();
+	/**
+	 * Gets the average rating.
+	 * 
+	 * @return the average rating
+	 */
+	double getAverageRating();
+
+	/**
+	 * Gets the rating count.
+	 * 
+	 * @return the rating count
+	 */
+	int getRatingCount();
+
+	/**
+	 * set Resouces Modified flag
+	 * 
+	 */
+	void setResoucesModified(boolean b);
+
+	/**
+	 * remove Resource from list
+	 * 
+	 */
+	void removeResource(Resource r);
+
+	/**
+	 * Gets the spatial Reference.
+	 * 
+	 * @return the spatial Reference
+	 */
+	SpatialReference getSpatialReference();
+
+	/**
+	 * Gets the spatial Reference Ags.
+	 * 
+	 * @return the spatial Reference Ags
+	 */
+	String getSpatialReferenceAgs();
+
+	/**
+	 * Gets the spatial Reference Nuts.
+	 * 
+	 * @return the spatial Reference Nuts
+	 */
+	String getSpatialReferenceNuts();
+
+	/**
+	 * Gets the spatial Reference Uri.
+	 * 
+	 * @return the spatial Reference Uri
+	 */
+	String getSpatialReferenceUri();
+
+	/**
+	 * Gets the spatial Reference Text.
+	 * 
+	 * @return the spatial Reference Text
+	 */
+	String getSpatialReferenceText();
+
+	void setSpatialDataValue(String value);
 }

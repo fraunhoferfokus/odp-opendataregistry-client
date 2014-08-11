@@ -37,6 +37,8 @@ public interface Constants {
 
     /** The Constant PROPERTY_NAME_CKAN_AUTHORIZATION_KEY. */
     static final String PROPERTY_NAME_CKAN_AUTHORIZATION_KEY = "ckan.authorization.key";
+    
+    static final String PROP_NAME_DEFAULT_SORT_METADATA = "sorting.default.metadata";
 
     /** The Constant OPEN_DATA_PROVIDER_NAME. */
     static final String OPEN_DATA_PROVIDER_NAME = "CKAN";
@@ -68,6 +70,8 @@ public interface Constants {
     static final String JSON_FIELD_SECTOR = "sector";
 
     static final String JSON_FIELD_SPATIAL = "spatial";
+    
+    static final String JSON_FIELD_SPATIAL_REFERENCE = "spatial_reference";
 
     static final String JSON_FIELD_SPATIALTEXT = "spatial-text";
 

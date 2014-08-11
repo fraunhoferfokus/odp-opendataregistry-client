@@ -17,75 +17,52 @@
  * along with Open Data Platform.  If not, see <http://www.gnu.org/licenses/agpl-3.0>.
  */
 
-package de.fhg.fokus.odp.registry.queries;
-
-import java.util.List;
-import java.util.Map;
-
-// TODO: Auto-generated Javadoc
 /**
- * The Interface QueryResult.
  * 
- * @param <T>
- *            the generic type
- * @author sim
  */
-public interface QueryResult<T> {
+package de.fhg.fokus.odp.registry.model;
+
+/**
+ * The Interface Spatial Reference.
+ * 
+ * @author msg
+ */
+public interface SpatialReference {
 
 	/**
-	 * Checks if is success.
+	 * Gets the ags.
 	 * 
-	 * @return true, if is success
+	 * @return the ags
 	 */
-	boolean isSuccess();
+	String getAgs();
 
 	/**
-	 * Gets the error message.
+	 * Gets the nuts.
 	 * 
-	 * @return the error message
+	 * @return the nuts
 	 */
-	String getErrorMessage();
+	String getNuts();
 
 	/**
-	 * Gets the result.
+	 * Gets the uri.
 	 * 
-	 * @return the result
+	 * @return the uri
 	 */
-	List<T> getResult();
+
+	String getUri();
 
 	/**
-	 * Gets the count.
+	 * Gets the Text.
 	 * 
-	 * @return the count
+	 * @return the text
 	 */
-	long getCount();
+	String getText();
 
-	/**
-	 * Gets the offset.
-	 * 
-	 * @return the offset
-	 */
-	long getOffset();
+	void setText(String text);
 
-	/**
-	 * Gets the page offset.
-	 * 
-	 * @return the page offset
-	 */
-	long getPageOffset();
+	void setUri(String uri);
 
-	/**
-	 * Gets the limit.
-	 * 
-	 * @return the limit
-	 */
-	int getLimit();
+	void setNuts(String nuts);
 
-	/**
-	 * Gets the facets.
-	 * 
-	 * @return the facets
-	 */
-	Map<String, QueryFacet> getFacets();
-
+	void setAgs(String ags);
 }

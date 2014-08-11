@@ -113,8 +113,8 @@ public class ContactImpl implements Contact, Serializable {
         return contactList;
     }
 
-    public JsonNode write() {
-        return ODRClientImpl.convert(contact);
-    }
+	public JsonNode write() {
+		return ODRClientImpl.convert(contact);
+	}
 
 }

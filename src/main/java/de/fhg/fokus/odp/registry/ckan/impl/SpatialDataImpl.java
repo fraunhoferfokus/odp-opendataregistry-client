@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012, 2013 Fraunhofer Institute FOKUS
+ * Copyright (c) 2012, 2014 Fraunhofer Institute FOKUS
  *
  * This file is part of Open Data Platform.
  *
@@ -23,65 +23,108 @@
 package de.fhg.fokus.odp.registry.ckan.impl;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
+import org.codehaus.jackson.JsonNode;
+
+import de.fhg.fokus.odp.registry.ckan.ODRClientImpl;
+import de.fhg.fokus.odp.registry.ckan.json.PolygonBean;
+import de.fhg.fokus.odp.registry.ckan.json.SpatialDataBean;
 import de.fhg.fokus.odp.registry.model.Coordinate;
 import de.fhg.fokus.odp.registry.model.SpatialData;
 import de.fhg.fokus.odp.registry.model.SpatialEnumType;
 
 /**
  * @author sim
+ * @author msg
  * 
  */
 public class SpatialDataImpl implements SpatialData, Serializable {
 
-    /**
+	/**
      * 
      */
-    private static final long serialVersionUID = 8914868607356372491L;
+	private static final long serialVersionUID = 8914868607356372491L;
 
-    private SpatialEnumType type;
+	/** The spatialdata. */
+	private final SpatialDataBean spatialdata;
 
-    private List<Coordinate> coordinates;
+	/**
+	 * Instantiates a new spatialdata impl.
+	 * 
+	 * @param spatialdata
+	 *            the spatialdata
+	 */
+	public SpatialDataImpl(SpatialDataBean spatialdata) {
+		this.spatialdata = spatialdata;
+	}
 
-    public SpatialDataImpl(SpatialEnumType type) {
-        this.type = type;
-    }
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see de.fhg.fokus.odp.registry.model.SpatialData#getType()
+	 */
+	@Override
+	public SpatialEnumType getType() {
+		return spatialdata.getType();
+	}
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see de.fhg.fokus.odp.registry.model.SpatialData#getType()
-     */
-    @Override
-    public SpatialEnumType getType() {
-        return type;
-    }
+	/**
+	 * Sets the type.
+	 * 
+	 * @param type
+	 *            the new type
+	 * @Override public void setType(String type) { spatialdata.setType(type); }
+	 */
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see de.fhg.fokus.odp.registry.model.SpatialData#getCoordinates()
-     */
-    @Override
-    public List<Coordinate> getCoordinates() {
-        if (coordinates == null) {
-            coordinates = new ArrayList<Coordinate>();
-        }
-        return coordinates;
-    }
+	@Override
+	public void setType(SpatialEnumType fromField) {
+		spatialdata.setType(fromField);
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see de.fhg.fokus.odp.registry.model.SpatialData#addCoordinate(double, double)
-     */
-    @Override
-    public Coordinate addCoordinate(double x, double y) {
-        Coordinate coordinate = new CoordinateImpl(x, y);
-        getCoordinates().add(coordinate);
-        return coordinate;
-    }
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see de.fhg.fokus.odp.registry.model.SpatialData#getPolygons()
+	 */
+	@Override
+	public List<PolygonBean> getPolygons() {
+		return spatialdata.getCoordinates();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see de.fhg.fokus.odp.registry.model.SpatialData#addPolygon(PolygonBean)
+	 */
+	@Override
+	public PolygonBean addPolygon() {
+		PolygonBean polygon = new PolygonBean();
+		spatialdata.addPolygon(polygon);
+		return polygon;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see de.fhg.fokus.odp.registry.model.SpatialData#addCoordinate(int,
+	 * double, double)
+	 */
+	@Override
+	public Coordinate addCoordinate(int index, double x, double y) {
+		Coordinate coordinate = new CoordinateImpl(x, y);
+		spatialdata.addCoordinate(index, coordinate);
+		return coordinate;
+	}
+
+	/**
+	 * write
+	 * 
+	 * @return
+	 */
+	public JsonNode write() {
+		return ODRClientImpl.convert(spatialdata);
+	}
 
 }

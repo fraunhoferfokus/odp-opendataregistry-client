@@ -21,84 +21,101 @@ package de.fhg.fokus.odp.registry.ckan.impl;
 
 import java.io.Serializable;
 
+import org.codehaus.jackson.JsonNode;
+
+import de.fhg.fokus.odp.registry.ckan.ODRClientImpl;
 import de.fhg.fokus.odp.registry.ckan.json.ResourceBean;
 import de.fhg.fokus.odp.registry.model.Resource;
 
 public class ResourceImpl implements Resource, Serializable {
 
-    /**
+	/**
      * 
      */
-    private static final long serialVersionUID = -4236686335813667952L;
+	private static final long serialVersionUID = -4236686335813667952L;
 
-    ResourceBean resource;
+	ResourceBean resource;
 
-    public ResourceImpl(ResourceBean resource) {
-        this.resource = resource;
-    }
+	public ResourceImpl(ResourceBean resource) {
+		this.resource = resource;
+	}
 
-    @Override
-    public String getUrl() {
-        return resource.getUrl();
-    }
+	@Override
+	public String getUrl() {
+		return resource.getUrl();
+	}
 
-    @Override
-    public void setUrl(String url) {
-        resource.setUrl(url);
-    }
+	@Override
+	public void setUrl(String url) {
+		resource.setUrl(url);
+	}
 
-    @Override
-    public String getFormat() {
-        return resource.getFormat();
-    }
+	@Override
+	public String getFormat() {
+		return resource.getFormat();
+	}
 
-    @Override
-    public void setFormat(String format) {
-        resource.setFormat(format);
-    }
+	@Override
+	public void setFormat(String format) {
+		resource.setFormat(format);
+	}
 
-    @Override
-    public String getDescription() {
-        return resource.getDescription();
-    }
+	@Override
+	public String getDescription() {
+		return resource.getDescription();
+	}
 
-    @Override
-    public void setDescription(String description) {
-        resource.setDescription(description);
-    }
+	@Override
+	public void setDescription(String description) {
+		resource.setDescription(description);
+	}
 
-    @Override
-    public String getLanguage() {
-        return resource.getLanguage();
-    }
+	@Override
+	public String getLanguage() {
+		return resource.getLanguage();
+	}
 
-    @Override
-    public void setLanguage(String language) {
-        resource.setLanguage(language);
-    }
+	@Override
+	public void setLanguage(String language) {
+		resource.setLanguage(language);
+	}
 
-    @Override
-    public String getHash() {
-        return resource.getHash();
-    }
+	@Override
+	public String getHash() {
+		return resource.getHash();
+	}
 
-    @Override
-    public void setHash(String hash) {
-        resource.setHash(hash);
-    }
+	@Override
+	public void setHash(String hash) {
+		resource.setHash(hash);
+	}
 
-    @Override
-    public String getType() {
-        return resource.getResource_type();
-    }
+	@Override
+	public String getType() {
+		return resource.getResource_type();
+	}
 
-    @Override
-    public void setType(String type) {
-        resource.setResource_type(type);
-    }
+	@Override
+	public void setType(String type) {
+		resource.setResource_type(type);
+	}
 
-    public ResourceBean getBean() {
-        return resource;
-    }
+	public ResourceBean getBean() {
+		return resource;
+	}
 
+	/* msg 10.04.2014 */
+	@Override
+	public String getId() {
+		return resource.getId();
+	}
+
+	/* msg 10.04.2014 */
+	/**
+	 * write 
+	 * @return
+	 */
+	public JsonNode write() {
+		return ODRClientImpl.convert(resource);
+	}
 }

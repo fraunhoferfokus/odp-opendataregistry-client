@@ -27,6 +27,13 @@ package de.fhg.fokus.odp.registry.model;
  */
 public interface Resource {
 
+	/**
+     * Gets the id.
+     * 
+     * @return the id
+     */
+    public String getId();
+	
     /**
      * Gets the url.
      * 

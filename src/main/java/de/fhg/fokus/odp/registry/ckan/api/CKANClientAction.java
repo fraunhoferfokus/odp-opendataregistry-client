@@ -54,6 +54,7 @@ public interface CKANClientAction {
     @Consumes("application/json")
     public ClientResponse<JsonNode> showUser(@HeaderParam("Authorization") String authenticationKey, JsonNode body);
 
+    
     @POST
     @Path("/api/3/action/roles_show")
     @Produces("application/json")

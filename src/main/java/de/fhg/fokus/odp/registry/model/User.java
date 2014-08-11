@@ -120,5 +120,9 @@ public interface User {
     boolean hasRole(String role);
 
     void updateRole(String role);
+ 
+	void updateRoles(List<String> roles);
+
+    public List<String> showRoles();
 
 }

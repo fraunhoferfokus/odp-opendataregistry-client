@@ -166,6 +166,8 @@ public interface ODRClient {
      * @return the user
      */
     User findUser(String name);
+    
+   
 
     /**
      * Creates the user.
@@ -189,7 +191,7 @@ public interface ODRClient {
      *            the metadata
      * @return the list
      */
-    List<String> showRoles(User user, String metadata);
+	List<String> showRoles(User user, String metadata);
 
     void updateRoles(User user, String object, List<String> roles);
 
@@ -277,4 +279,5 @@ public interface ODRClient {
      */
     String mungeTitleToName(String title);
 
+     List<String> listUsers();
 }

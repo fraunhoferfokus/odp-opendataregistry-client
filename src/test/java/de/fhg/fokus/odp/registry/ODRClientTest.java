@@ -33,6 +33,7 @@ import de.fhg.fokus.odp.registry.ckan.ODRClientImpl;
 import de.fhg.fokus.odp.registry.ckan.impl.LicenceImpl;
 import de.fhg.fokus.odp.registry.ckan.impl.MetadataImpl;
 import de.fhg.fokus.odp.registry.ckan.json.LicenceBean;
+import de.fhg.fokus.odp.registry.ckan.json.SpatialDataBean;
 import de.fhg.fokus.odp.registry.model.Application;
 import de.fhg.fokus.odp.registry.model.Category;
 import de.fhg.fokus.odp.registry.model.Contact;
@@ -44,6 +45,7 @@ import de.fhg.fokus.odp.registry.model.Metadata;
 import de.fhg.fokus.odp.registry.model.MetadataEnumType;
 import de.fhg.fokus.odp.registry.model.RoleEnumType;
 import de.fhg.fokus.odp.registry.model.SectorEnumType;
+import de.fhg.fokus.odp.registry.model.SpatialEnumType;
 import de.fhg.fokus.odp.registry.model.Tag;
 import de.fhg.fokus.odp.registry.model.TemporalGranularityEnumType;
 import de.fhg.fokus.odp.registry.model.User;
@@ -230,10 +232,13 @@ public class ODRClientTest {
         publisher.setEmail("publisher@fokus.fraunhofer.de");
         publisher.setName("I'm the Publisher");
 
-        impl.getSpatialData().addCoordinate(10.0000, 8.0000);
-        impl.getSpatialData().addCoordinate(10.3000, 8.5000);
-        impl.getSpatialData().addCoordinate(10.0000, 8.5000);
-        impl.getSpatialData().addCoordinate(10.3000, 8.0000);
+        impl.getSpatialData().addPolygon();
+        impl.getSpatialData().addCoordinate(0,10.0000, 8.0000);
+        impl.getSpatialData().addCoordinate(0,10.3000, 8.5000);
+        impl.getSpatialData().addCoordinate(0,10.0000, 8.5000);
+        impl.getSpatialData().addCoordinate(0,10.3000, 8.0000);
+        
+        
 
         impl.setExtra("extra1", "value for extra 1");
         impl.setExtra("extra2", "value for extra 2");
@@ -272,7 +277,7 @@ public class ODRClientTest {
         User user = odr.findUser(name);
         if (user == null) {
             log.info("User {} not found, creating...", name);
-            user = odr.createUser(name, name + "@ogdd.de", name);
+			user = odr.createUser(name, name + "@ogdd.de", name);
             if (user != null) {
                 log.info("... done");
             }

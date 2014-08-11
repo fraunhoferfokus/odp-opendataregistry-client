@@ -19,6 +19,7 @@
 		</dependencies>
 	</dependencyManagement>
 	<dependencies>
+
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
@@ -59,7 +60,7 @@
 
 	</dependencies>
 	<scm>
-		<developerConnection>scm:git:git://github.com:fraunhoferfokus/odp-opendataregistry-client.git</developerConnection>
+		<developerConnection>scm:git:git://gitlab.fokus.fraunhofer.de:odp-opendataregistry-client</developerConnection>
 	</scm>
 	<build>
 		<finalName>${project.artifactId}-${project.version}-${buildNumber}</finalName>

@@ -36,103 +36,103 @@ import de.fhg.fokus.odp.registry.queries.QueryResult;
  */
 public class QueryResultImpl<T> implements QueryResult<T>, Serializable {
 
-    /**
+	/**
      * 
      */
-    private static final long serialVersionUID = -7197778635040570499L;
+	private static final long serialVersionUID = -7197778635040570499L;
 
-    private List<T> data;
+	private List<T> data;
 
-    private long count;
+	private long count;
 
-    private long offset;
+	private long offset;
 
-    private long pageoffset;
+	private long pageoffset;
 
-    private int limit;
+	private int limit;
 
-    private boolean success = true;
+	private boolean success = true;
 
-    private String errorMessage;
+	private String errorMessage;
 
-    private Map<String, QueryFacet> facets;
+	private Map<String, QueryFacet> facets;
 
-    @Override
-    public List<T> getResult() {
-        return data;
-    }
+	@Override
+	public List<T> getResult() {
+		return data;
+	}
 
-    public void setResult(List<T> data) {
-        this.data = data;
-    }
+	public void setResult(List<T> data) {
+		this.data = data;
+	}
 
-    @Override
-    public long getCount() {
-        return count;
-    }
+	@Override
+	public long getCount() {
+		return count;
+	}
 
-    public void setCount(long count) {
-        this.count = count;
-    }
+	public void setCount(long count) {
+		this.count = count;
+	}
 
-    @Override
-    public boolean isSuccess() {
-        return success;
-    }
+	@Override
+	public boolean isSuccess() {
+		return success;
+	}
 
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
+	public void setSuccess(boolean success) {
+		this.success = success;
+	}
 
-    @Override
-    public String getErrorMessage() {
-        return errorMessage;
-    }
+	@Override
+	public String getErrorMessage() {
+		return errorMessage;
+	}
 
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
-    }
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
-    @Override
-    public long getOffset() {
-        return offset;
-    }
+	@Override
+	public long getOffset() {
+		return offset;
+	}
 
-    public void setOffset(long offset) {
-        this.offset = offset;
-    }
+	public void setOffset(long offset) {
+		this.offset = offset;
+	}
 
-    @Override
-    public int getLimit() {
-        return limit;
-    }
+	@Override
+	public int getLimit() {
+		return limit;
+	}
 
-    public void setLimit(int limit) {
-        this.limit = limit;
-    }
+	public void setLimit(int limit) {
+		this.limit = limit;
+	}
 
-    @Override
-    public Map<String, QueryFacet> getFacets() {
-        if (facets == null) {
-            facets = new HashMap<String, QueryFacet>();
-        }
-        return facets;
-    }
+	@Override
+	public Map<String, QueryFacet> getFacets() {
+		if (facets == null) {
+			facets = new HashMap<String, QueryFacet>();
+		}
+		return facets;
+	}
 
-    /**
-     * @return the pageoffset
-     */
-    @Override
-    public long getPageOffset() {
-        return pageoffset;
-    }
+	/**
+	 * @return the pageoffset
+	 */
+	@Override
+	public long getPageOffset() {
+		return pageoffset;
+	}
 
-    /**
-     * @param pageoffset
-     *            the pageoffset to set
-     */
-    public void setPageOffset(long pageoffset) {
-        this.pageoffset = pageoffset;
-    }
+	/**
+	 * @param pageoffset
+	 *            the pageoffset to set
+	 */
+	public void setPageOffset(long pageoffset) {
+		this.pageoffset = pageoffset;
+	}
 
 }
